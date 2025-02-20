@@ -1,0 +1,88 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+body {
+     height: 100vh;
+     position: relative;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+}
+body::after {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: rgba(0, 0, 0, 0.5); /* 검은색 반투명 레이어 */
+     z-index: -1;
+}
+#main-container {
+     color: white;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 92%;
+}
+#time {
+     font-size: 100px;
+}
+#greet-box {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 50px;
+}
+#addname-box {
+     text-align: center;
+     width: 40%;
+}
+#username-input {
+     width: 70%; /* 원하는 크기로 조절 가능 */
+
+     font-size: 32px; /* 글자 크기 */
+     border: none; /* 테두리 제거 */
+     border-bottom: 2px solid white; /* 밑줄 스타일 */
+     outline: none; /* 클릭 시 파란 테두리 제거 */
+     background: transparent; /* 배경 투명 */
+     color: white;
+     font-weight: 500;
+}
+#username-input::placeholder {
+     color: rgb(197, 197, 197);
+}
+
+/* 입력 중일 때 밑줄 강조 효과 */
+#username-input:focus {
+     border-bottom: 2px solid #007bff; /* 포커스 시 밑줄 색 변경 */
+}
+#username-box {
+     display: flex;
+     align-items: center; /* 세로 중앙 정렬 */
+     justify-content: center; /* 가로 중앙 정렬 */
+     gap: 10px; /* 요소 사이 간격 조절 */
+     width: 300px;
+     padding: 10px;
+}
+button {
+     background-color: rgba(255, 255, 255, 0.5);
+     color: white;
+     border: none;
+     border-radius: 5px;
+     height: 30px;
+     padding: 5px 10px;
+     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+     transition: box-shadow 0.3s ease-in-out;
+     cursor: pointer;
+}
+
+.hidden {
+     display: none;
+}
+footer {
+     height: 8%;
+}

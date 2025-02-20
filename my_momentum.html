@@ -1,79 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dashboard</title>
-  </head>
-  <body>
-    <div>
-      <p id="time"></p>
-      <div id="greet-box">
-        <span id="greet-text"></span>
-
-        <div id="addname-box">
-          <input id="username-input" placeholder="이름을 입력하세요." />
-          <button id="add-name-btn">추가</button>
-        </div>
-
-        <div id="username-box">
-          <p id="user-name"></p>
-          <button id="edit-name-btn">수정</button>
-        </div>
-      </div>
-    </div>
-    <script>
-      let user = JSON.parse(localStorage.getItem("name")) || "";
-      const time = document.getElementById("time");
-      const greetBox = document.getElementById("greet-box");
-      const greetText = document.getElementById("greet-text");
-      const userNameInput = document.getElementById("username-input");
-      const addNameBtn = document.getElementById("add-name-btn");
-      const userName = document.getElementById("user-name");
-      const editNameBtn = document.getElementById("edit-name-btn");
-      //현재시간 알려주기
-      setInterval(() => getTime(), 1000);
-      //시간에 따라 바뀌는 인사말
-      getGreet();
-      // userName.innerHTML = user[0];
-
-      console.log(user);
-      if (user) {
-        userName.innerHTML = user;
-      } else {
-        putName(addNameBtn);
-      }
-
-      putName(editNameBtn);
-
-      console.log(user);
-
-      function getGreet() {
-        let now = new Date();
-        let newHour = now.getHours();
-        if (newHour >= 4 && newHour < 12) greetText.innerHTML = "Good Morning";
-        else if (newHour >= 12 && newHour < 18) greetText.innerHTML = "Good Afternoon";
-        else if (newHour >= 18 || newHour < 4) greetText.innerHTML = "Good Night";
-      }
-
-      function getTime() {
-        let now = new Date();
-        let nowHour = now.getHours() >= 10 ? `${now.getHours()}` : `0${now.getHours()}`;
-        let nowMin = now.getMinutes() >= 10 ? `${now.getMinutes()}` : `0${now.getMinutes()}`;
-        time.innerHTML = `${nowHour}:${nowMin}`;
-      }
-
-      function putName(button) {
-        button.addEventListener("click", () => {
-          userName.innerHTML = userNameInput.value;
-          user = userNameInput.value;
-          saveUsers();
-        });
-      }
-
-      function saveUsers() {
-        localStorage.setItem("name", JSON.stringify(user));
-      }
-    </script>
-  </body>
+     <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>dashboard</title>
+          <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+          <link rel="stylesheet" href="CSS/style.css" />
+     </head>
+     <body>
+          
+          <div id="main-container">
+               <p id="time"></p>
+               <section id="greet-box">
+                    <article id="greet-text"></article>
+                    <div id="addname-box">
+                         <input type="text" id="username-input" placeholder="Who are U?" />
+                         <button id="add-name-btn">추가</button>
+                    </div>
+                    <div id="username-box" ></div>
+               </div>
+               </section>
+               <footer>
+                    <p id = "saying">명언</p>
+                    <p id = "sayingPerson"></p>
+               </footer>
+          <script src="index.js"></script>
+          
+     </body>
+     
 </html>
