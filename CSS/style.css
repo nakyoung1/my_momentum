@@ -3,6 +3,11 @@
      padding: 0;
      box-sizing: border-box;
 }
+header {
+     display: flex;
+     flex-direction: space-between;
+}
+
 body {
      height: 100vh;
      position: relative;
@@ -42,9 +47,9 @@ body::after {
      width: 40%;
 }
 #username-input {
-     width: 70%; /* 원하는 크기로 조절 가능 */
-
-     font-size: 32px; /* 글자 크기 */
+     width: 50%;
+     text-align: center;
+     font-size: 50px; /* 글자 크기 */
      border: none; /* 테두리 제거 */
      border-bottom: 2px solid white; /* 밑줄 스타일 */
      outline: none; /* 클릭 시 파란 테두리 제거 */
@@ -84,5 +89,7 @@ button {
      display: none;
 }
 footer {
-     height: 8%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
 }

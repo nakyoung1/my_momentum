@@ -3,6 +3,8 @@ const image = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"];
 const showImage = image[Math.floor(Math.random() * image.length)];
 document.body.style.backgroundImage = `url(img/${showImage})`;
 
+const weather = document.getElementById("weather");
+
 const time = document.getElementById("time");
 const greetBox = document.getElementById("greet-box");
 const greetText = document.getElementById("greet-text");
@@ -12,6 +14,22 @@ const userNameInput = document.getElementById("username-input");
 const addNameBtn = document.getElementById("add-name-btn");
 
 const userNameBox = document.getElementById("username-box");
+
+function getTemp() {
+     navigator.geolocation.getCurrentPosition(async (position) => {
+          let lat = position.coords.latitude;
+          let long = position.coords.longitude;
+          const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=034db30f421b1daff5ebe414f46fc87c&units=metric&lang=kr`);
+          const data = await response.json();
+          //구조분해
+          const {
+               main: { temp },
+          } = data;
+          weather.innerHTML = `${temp} ℃ `;
+     });
+}
+
+getTemp();
 
 $(document).ready(() => {
      $("#username-box").on("mouseenter", function () {
@@ -95,3 +113,14 @@ addNameBtn.addEventListener("click", function () {
      userNameBox.style.display = "flex";
      showUserName(text); // 저장된 이름 표시
 });
+const saying = document.getElementById("saying");
+const sayingPerson = document.getElementById("saying-person");
+//명언 표시
+
+async function getSaying() {
+     const response = await fetch("https://korean-advice-open-api.vercel.app/api/advice");
+     const data = await response.json();
+     console.log(data);
+     //구조분해
+}
+getSaying();
