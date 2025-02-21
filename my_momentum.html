@@ -4,28 +4,57 @@
           <meta charset="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>dashboard</title>
-          <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
           <link rel="stylesheet" href="CSS/style.css" />
      </head>
      <body>
-          <header>
-               <p id = "weather"></p>
-          </header>
-          <div id="main-container">
-               <p id="time"></p>
+          <div id = "weather-container">
+               <div id = "weather-icon" ></div>
+               <div id = "weather">weather</div>
+               <p id = "weather-city">2</p>
+          </div>
+
+          <section id="main-container">
+               
                <section id="greet-box">
+                    <p id="time"></p>
+                    <div id = "greet">
                     <article id="greet-text"></article>
                     <div id="addname-box">
                          <input type="text" id="username-input" placeholder="Name?" />
                          <button id="add-name-btn">추가</button>
                     </div>
-                    <div id="username-box" ></div>
+                    <div id="username-box" >
+                    </div></div>
                </div>
-               </section>
-               <footer>
+          </section>
+     </section>
+
+               <div id = "today-goal-container">
+                    <p id = "">what is main goal today?</p>
+                    <div id = "goal-input-box">
+                         <input type = "text" id = "today-goal-input" >
+                     <button id="goal-add-btn">+</button>
+                     </div>
+                    <ul id="goal-list">
+                        
+                    </ul>
+               </div>
+               
+               <div id = "baseline">
+               <div id = "quote">
                     <article id = "saying">명언</article>
                     <article id = "saying-person">person</article>
-               </footer>
+               </div>
+               <button id="tasks-btn">todo</button>
+          <div id = "todo-container">
+               <h3>To-Do List</h3>
+               <input type="text" id="todo-input" placeholder="새로운 할 일">
+               <button id="add-btn">+</button>
+               <ul id="todo-list"></ul>
+          </div>
+     </div>
+        
           <script src="index.js"></script>
           
      </body>

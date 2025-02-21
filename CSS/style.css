@@ -25,19 +25,35 @@ body::after {
      background-color: rgba(0, 0, 0, 0.5); /* 검은색 반투명 레이어 */
      z-index: -1;
 }
+
+#weather-container {
+     position: fixed;
+     top: 20px;
+     right: 20px;
+     text-align: center;
+     color: white;
+     font-weight: 500;
+}
 #main-container {
+     margin: 0 auto;
      color: white;
      display: flex;
      flex-direction: column;
-     justify-content: center;
+     justify-content: space-evenly;
      align-items: center;
-     height: 92%;
+     height: 60%;
 }
 #time {
      font-size: 100px;
 }
+#greet {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
 #greet-box {
      display: flex;
+     flex-direction: column;
      justify-content: center;
      align-items: center;
      font-size: 50px;
@@ -66,12 +82,12 @@ body::after {
      border-bottom: 2px solid #007bff; /* 포커스 시 밑줄 색 변경 */
 }
 #username-box {
-     display: flex;
+     display: none;
      align-items: center; /* 세로 중앙 정렬 */
      justify-content: center; /* 가로 중앙 정렬 */
      gap: 10px; /* 요소 사이 간격 조절 */
      width: 300px;
-     padding: 10px;
+     padding: 5px;
 }
 button {
      background-color: rgba(255, 255, 255, 0.5);
@@ -84,12 +100,98 @@ button {
      transition: box-shadow 0.3s ease-in-out;
      cursor: pointer;
 }
+#today-goal-container {
+     height: 33%;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: center;
+     gap: 20px;
+}
+#today-goal-container p {
+     font-size: 30px;
+     color: white;
+}
+#goal-input-box {
+     width: 300px;
+     text-align: center;
+}
+#goal-list {
+     color: white;
+     font-size: 30px;
+     list-style: none;
+}
+.goal-del-btn {
+     margin-left: 10px;
+}
+#today-goal-input {
+     margin: 0 auto;
+     width: 70%;
+     text-align: center;
+     font-size: 30px; /* 글자 크기 */
+     border: none; /* 테두리 제거 */
+     border-bottom: 2px solid white; /* 밑줄 스타일 */
+     outline: none; /* 클릭 시 파란 테두리 제거 */
+     background: transparent; /* 배경 투명 */
+     color: white;
+     font-weight: 500;
+}
 
 .hidden {
      display: none;
 }
-footer {
+
+#baseline {
+     position: relative;
+}
+#quote {
+     height: 5%;
      display: flex;
      flex-direction: column;
-     justify-content: center;
+     align-items: center;
+     gap: 5px;
+     color: rgba(255, 255, 255, 0.5);
+     font-weight: 500;
+}
+
+#tasks-btn {
+     position: fixed;
+     right: 30px;
+     bottom: 30px;
+}
+#todo-container {
+     position: fixed;
+     bottom: 70px;
+     right: 20px;
+     width: 250px;
+     background: white;
+     padding: 10px;
+     border-radius: 8px;
+     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+     display: none;
+}
+#todo-list {
+     list-style: none;
+     padding: 0;
+}
+
+#todo-list li {
+     padding: 5px 0;
+     border-bottom: 1px solid #ddd;
+     display: flex;
+     justify-content: space-between;
+}
+
+#todo-input {
+     width: 80%;
+     padding: 5px;
+}
+
+#add-btn {
+     background-color: #28a745;
+     color: white;
+     border: none;
+     padding: 5px 10px;
+     cursor: pointer;
+     margin-left: 5px;
 }
